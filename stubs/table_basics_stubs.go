@@ -103,7 +103,7 @@ func StubAddMovieBatch(tableName string, inputRequests []types.WriteRequest, rai
 }
 
 // Add StubAddMovieTransact for unit-testing AddMovieTransact function
-func StubAddMovieTransact(tableName string, inputTransactions []types.TransactWriteItem, raiseErr *testtools.StubError) testtools.Stub {
+func StubAddMovieTransact(inputTransactions []types.TransactWriteItem, raiseErr *testtools.StubError) testtools.Stub {
 	return testtools.Stub{
 		OperationName: "TransactWriteItems",
 		Input: &dynamodb.TransactWriteItemsInput{TransactItems: inputTransactions},
